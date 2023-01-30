@@ -39,5 +39,11 @@ public class HelloProcessing extends PApplet
 		ellipse(250, 250, 50, 50);
 		//ellipse(ALPHA, AMBIENT, ARC, ADD);
 		// The origin is the top left corner, top to bottom as you increase you go down the screen
+		//background(0);
+		//circle(mouseX, mouseY, 100);
+		//fill(mouseX,0,mouseY);
+		//circle(mouseX, mouseY, mouseY);
+		
 	}
+
 }

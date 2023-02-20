@@ -15,11 +15,17 @@ public class Main
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new StarMap());
     }
+
+	public static void Audio1()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Audio1());
+    }
 	
 	 public static void main(String[] args)
 	 {
 		
-		BugZap();
+		Audio1();
 	 }
 	
 }

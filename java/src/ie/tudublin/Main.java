@@ -16,10 +16,15 @@ public class Main
         processing.core.PApplet.runSketch( a, new StarMap());
     }
 	
-	 public static void main(String[] args)
-	 {
+	public static void main(String[] args)
+	{
+		System.out.println("Hello world");
 		
-		BugZap();
-	 }
+		Dog penny = new Dog();
+		penny.setName("Penny");
+		penny.speak();
+
+		starMap();
+	}
 	
 }

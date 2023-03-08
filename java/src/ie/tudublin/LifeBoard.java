@@ -1,16 +1,12 @@
 package ie.tudublin;
-
 import processing.core.PApplet;
-
 public class LifeBoard {
     boolean[][] board;
     boolean[][] next;
     
     private int size;
     PApplet p;
-
     float cellWidth;
-
     public boolean getCell(int row, int col)
     {
         if (row >= 0 && row < size && col >= 0 && col < size)
@@ -22,7 +18,6 @@ public class LifeBoard {
             return false;
         }
     }
-
     public int countCells(int row, int col)
     {
         int count = 0 ;
@@ -31,8 +26,10 @@ public class LifeBoard {
             for (int j = -1 ; j <= 1 ; j ++)
             {
                 if (! (i == 0) && (j == 0))
+                if (! (i == 0 && j == 0))
                 {
                     if (getCell(i, j))
+                    if (getCell(row + i, col + j))
                     {
                         count ++;
                     }
@@ -41,7 +38,6 @@ public class LifeBoard {
         } 
         return count;
     }
-
     public void applyRules()
     {
         for(int row = 0 ; row < size ; row ++)
@@ -59,7 +55,7 @@ public class LifeBoard {
                     {
                         next[row][col] = false;
                     }
-                    
+
                 }
                 else
                 {
@@ -72,17 +68,17 @@ public class LifeBoard {
                         next[row][col] = false;
                     }
                 }
-
                 // < 2 > 3 dies
                 // 2-3 survices
                 // dead with 3 neighboiurs comes to life
             }
         }
         boolean[][] temp = board;
+        boolean[][] temp;
+        temp = board;
         board = next;
         next = temp;
     }
-
     public LifeBoard(int size, PApplet p)
     {
         this.size = size;
@@ -91,7 +87,6 @@ public class LifeBoard {
         this.p = p;
         cellWidth = p.width / (float) size;
     }
-
     public void randomise()
     {
         for(int row = 0 ; row < size ; row ++)
@@ -103,7 +98,6 @@ public class LifeBoard {
             }
         }
     }
-
     public void render()
     {
         for(int row = 0 ; row < size ; row ++)
@@ -113,7 +107,6 @@ public class LifeBoard {
             {
                 float x = col * cellWidth;
                 float y = row * cellWidth;
-
                 if (board[row][col])
                 {
                     p.fill(0, 255, 0);
@@ -126,12 +119,9 @@ public class LifeBoard {
             }
         }
     }
-
-
     public int getSize() {
         return size;
     }
-
     public void setSize(int size) {
         this.size = size;
     } 
